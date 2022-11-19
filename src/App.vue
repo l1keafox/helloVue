@@ -1,31 +1,48 @@
 <template>
-  <div>{{greet}} {{ name }}, </div>
-  <div v-html="channel"></div>
-  <div v-html="hack"> </div>
-  <div v-bind:id="headingId"> heading</div>
-  <button v-bind:disabled="isDisabled" >Bind</button>
+  <h2 :id="headingId">heading </h2>
+  <button :disabled="isDisabled"> Bind</button>
+  <h2 class="underline"> underline text</h2>
+  <h2 class="underline" :class="status"> Status</h2>
+  <h2 :class = "isPromoted && 'prompted'"> Promoted Movie </h2>
+  <h2 :class="isSoldout ? 'sold-out' : 'new'"> Soldout? movie</h2> 
+  <h2 :class="['new','prompted']"> Newly promoted Moive</h2>
+  <h2 :class="[isPromoted && 'prompted', isSoldout ? 'sold-out' : 'new' ]"> Array conditional movie</h2>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   data(){
     return {
-      greet: "Ahoy",
-      name: "William",
-      channel:"<b>Codevolution</b>",
       headingId: "heading",
-      isDisabled: false,
-      hack: `<a href="#" onclick="alert('You have been hacked!')"> win a prize<a/>`
+      status: 'danger',
+      isDisabled:false,
+      isPromoted: true,
+      isSoldout: true
     }
   }
 }
 </script>
 
 <style>
-#heading{
-  font-size: 10rem;
+
+.danger{
+  background-color: red;
+}
+.success{
+  background-color: green;
+}
+.underline {
+  text-decoration: underline;
+}
+.prompted {
+  font-style: italic;
+}
+.new {
+  color: olivedrab;
+}
+.sold-out {
+  color: red;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -35,4 +52,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
