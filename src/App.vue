@@ -1,6 +1,9 @@
 <template>
   <div>{{greet}} {{ name }}, </div>
-  <div v-text="channel"></div>
+  <div v-html="channel"></div>
+  <div v-html="hack"> </div>
+  <div v-bind:id="headingId"> heading</div>
+  <button v-bind:disabled="isDisabled" >Bind</button>
 </template>
 
 <script>
@@ -11,13 +14,19 @@ export default {
     return {
       greet: "Ahoy",
       name: "William",
-      channel:"Codevolution"
+      channel:"<b>Codevolution</b>",
+      headingId: "heading",
+      isDisabled: false,
+      hack: `<a href="#" onclick="alert('You have been hacked!')"> win a prize<a/>`
     }
   }
 }
 </script>
 
 <style>
+#heading{
+  font-size: 10rem;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
