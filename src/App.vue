@@ -9,6 +9,11 @@
   </div>
 
   <h2 v-for="(value,key,index) in myInfo" :key="value" >{{index}}  {{key}} {{ value }}</h2>
+  <hr/>
+  <template v-for="name in names" :key="name"> 
+    <h2> {{name}} </h2>
+    <hr/>
+  </template>
 </template>
 
 <script>
