@@ -1,16 +1,31 @@
 <template>
-  <h2> {{name}} </h2>
-  <div>
-    <button  @click="changeName($event),increment(1,$event)" >      Change Name    </button>
-  </div>
-  <h2> {{ count }} </h2>
   <div> 
-    <button @click="increment(2,$event)">Add</button>
-    <button @click="decremnt(2)">Subtract</button>
-    <button @click="increment(5,$event)">Add 5</button>
-    <button v-on:click="decremnt(5)">Subtract 5</button>
-
+    <pre>
+      {{ JSON.stringify(formValues,null,2) }}
+    </pre>
   </div>
+  <form >
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" v-model="formValues.name">
+    </div>
+    <div>
+      <label for="profile">Profile Sumary</label>
+      <textarea name="" id="profile" cols="30" rows="10" v-model="formValues.profileSummary"></textarea>
+    </div>
+    <div>
+      <label for="country">Country </label>
+      <select name="" id="country" v-model="formValues.country">
+        <option value="">Select a Country</option>
+        <option value="india">India</option>
+        <option value="vietnam">Vietnam</option>
+        <option value="singapore">Singapore</option>
+      </select>
+    </div>
+
+    <button> Enter Info </button>
+
+  </form>
 </template>
 
 <script>
@@ -18,22 +33,14 @@ export default {
   name: 'App',
   data(){
     return {
-      name: 'Raymond',
-      count: 0
+      formValues: {
+        name: '',
+        profileSummary: '',
+        country: ''
+      }
     }
   },
   methods: {
-    changeName(event){
-      this.name = 'batman'
-      console.log(event)
-    },
-    increment(num,event) {
-      this.count+=num;
-      console.log(event,"INC");
-    },
-    decremnt(num) {
-      this.count-=num;
-    }
   }
 }
 </script>
@@ -43,7 +50,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
