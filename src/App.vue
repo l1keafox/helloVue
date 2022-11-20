@@ -7,7 +7,14 @@
     <h2> Code</h2>
     <h2> Vye</h2>
   </template>
+
+  
+  <h2 v-show="showElement"> Using v-show</h2>
+  <h2 v-if="ifShow"> useing v-if</h2>
+
 </template>
+
+ <!-- Difference between v-show and v-if -->
 
 <script>
 export default {
@@ -15,7 +22,9 @@ export default {
   data(){
     return {
       num: -1,
-      display: false
+      display: true,
+      showElement:false,
+      ifShow:true
     }
   }
 }
