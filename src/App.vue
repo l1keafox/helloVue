@@ -1,9 +1,18 @@
 <template>
-  <h2> {{ 2 + 3 + 5 }}</h2>
-  <h2> {{ 5 + 10 + 15 }}</h2>
-  <h2> add method - {{ add(2,3,5) }}</h2>
-  <h2> add method - {{ add(54,33,25) }}</h2>
-  <h3> {{ multiply( 2  * baseMultiplier ) }}</h3>
+  <h2> {{name}} </h2>
+  <div>
+    <button  v-on:mouseover="name = 'batman'" >
+      Change Name
+    </button>
+  </div>
+  <h2> {{ count }} </h2>
+  <div> 
+    <button v-on:click="increment(2)">Add</button>
+    <button v-on:click="decremnt(2)">Subtract</button>
+    <button v-on:click="increment(5)">Add 5</button>
+    <button v-on:click="decremnt(5)">Subtract 5</button>
+    
+  </div>
 </template>
 
 <script>
@@ -11,16 +20,19 @@ export default {
   name: 'App',
   data(){
     return {
-      baseMultiplier: 5  ,
-      baseValue:2
+      name: 'Raymond',
+      count: 0
     }
   },
   methods: {
-    add(a,b,c) {
-      return a+b+c
+    changeName(){
+      this.name = 'batman'
     },
-    multiply:(num)=>{
-      return num ;
+    increment(num) {
+      this.count+=num;
+    },
+    decremnt(num) {
+      this.count-=num;
     }
   }
 }
