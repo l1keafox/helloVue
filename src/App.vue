@@ -1,12 +1,12 @@
 <template>
   <div class="flex justify-center">
-    <form class="flex flex-col bg-slate-300 font-mono m-2 p-3" @submit="submitForm">
+    <form class="flex flex-col bg-slate-300 font-mono m-2 p-3" @submit.prevent="submitForm">
       <div class="container flex flex-col justify-center items-left p-2">
         <label for="name">Name</label>
         <input
           type="text"
           id="name"
-          v-model="formValues.name"
+          v-model.trim.lazy="formValues.name"
           class="bg-slate-100 border-2 border-sky-500"
         />
       </div>
@@ -78,7 +78,8 @@
           <input type="checkbox" id="javascript" value="javascript"  v-model="formValues.skillSet" />
         </div>
       </div>
-      <div>
+
+      <div class="container flex-col flex justify-left items-left p-2">
         <label for="" class="text-center pb-3 font-bold">Years of Xp</label>
         <div class="flex justify-between px-20">
           <label for="0-2">0-2</label>
@@ -94,6 +95,10 @@
         </div>
       </div>
 
+      <div class="container flex-col flex justify-left items-left p-2">
+        <label for ="age">Age</label>
+        <input @keyup.enter="submitForm" type="number" id="age"  v-model.number="formValues.age"/>
+      </div>
 
       <div class="container flex justify-center items-center p-2">
         <button
@@ -124,15 +129,15 @@ export default {
         jobLocation: [],
         remote: "no",
         skillSet: [],
-        yearsOfXp: ''
+        yearsOfXp: '',
+        age:0
       },
     };
   },
   methods: {
-    submitForm(event){
-      event.preventDefault();
+    submitForm(){
       console.log(this.formValues);
-      console.log( this.formValues.name);
+      console.log( this.formValues.name.trim());
     },
   },
 };
