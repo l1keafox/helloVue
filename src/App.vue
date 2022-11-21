@@ -1,5 +1,8 @@
 <template>
-  <Greet/>
+  <Greet fofo="bruce" hero="Batman"/>
+  <Greet fofo="Ray"  hero="Father"/>
+  <Greet fofo="Williams"  hero="Son"/>
+  <Greet :fofo="name"  :hero="channel"/>
 </template>
 
 <script>
@@ -11,7 +14,10 @@ export default {
     Greet
   },
   data() {
+    
     return {
+      name:"evee",
+      channel:"mother"
     };
   },
   methods: {
