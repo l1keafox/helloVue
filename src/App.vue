@@ -8,6 +8,14 @@
   <h2> Method Total - {{getTotal() }} </h2>
   <input type="text" v-model="country">
 
+  <template v-for="item in items" :key="item.id"> 
+    <h2 v-if="item.price > 100" >{{item.title}} $$ {{item.price}}</h2>
+  </template>
+
+  <h2 v-for="item in expensiveItems" :key="item.id"> 
+    {{item.title}} :: ? {{item.price}}
+  </h2>
+
 </div>
 </template>
 
@@ -27,30 +35,35 @@ export default {
         {
           id:2,
           title: 'Phone',
-          price:120
+          price:200
         },
         {
           id:3,
           title: 'Laptop',
-          price:105
+          price:300
         },
       ],
       country:''
     };
   },
   methods: {
+    // Will always be changed in the UI.
     getTotal(){
       console.log('gettotal method');
       return this.items.reduce((total,curr) => (total=total+curr.price),0)
     }
   },
   computed:{
+    // This will be cached, and doesn't always get called when UI.
     fullName(){
       return `${this.firstName} ${this.lastName}`
     },
     calculateTotal(){
       console.log("get total calcuated")
       return this.items.reduce((total,curr) => (total=total+curr.price),0)
+    },
+    expensiveItems(){
+      return this.items.filter(e=>e.price > 100);
     }
   }
 };
