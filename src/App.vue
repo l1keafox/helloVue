@@ -2,6 +2,9 @@
   <div class="flex flex-col justify-center items-center">
   <h2>Fullname - {{firstName}} {{lastName}} </h2>
   <h2> Computed Fullname - {{fullName}}</h2>
+  <button @click="changeFullName">  Change Fullname</button>
+
+
   <h2> Totals - {{ items.reduce((total,curr) => (total=total+curr.price),0) }}</h2>
   <button @click="items.push({id:items.length+1, title:'keyboard',price:50 } )"> BTM </button>
   <h3> Total Computed {{calculateTotal}}</h3>
@@ -20,6 +23,7 @@
 </template>
 
 <script>
+
 export default {
   name: "App",
   data() {
@@ -51,12 +55,23 @@ export default {
     getTotal(){
       console.log('gettotal method');
       return this.items.reduce((total,curr) => (total=total+curr.price),0)
+    },
+    changeFullName(){
+      this.fullName = "Johan Lee"
     }
   },
   computed:{
-    // This will be cached, and doesn't always get called when UI.
-    fullName(){
-      return `${this.firstName} ${this.lastName}`
+    // computed is cached, and doesn't always get called when UI.
+    // Filtering sorting here is best! Prevent Vue from recalcuating update doesn't concern table data.
+    fullName:{
+      get(){
+        return `${this.firstName} ${this.lastName}`
+      },
+      set(value){
+        const names = value.split(' ');
+        this.firstName = names[0];
+        this.lastName = names[1];
+      }
     },
     calculateTotal(){
       console.log("get total calcuated")
