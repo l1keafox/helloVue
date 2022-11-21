@@ -5,7 +5,9 @@
   <h2> Totals - {{ items.reduce((total,curr) => (total=total+curr.price),0) }}</h2>
   <button @click="items.push({id:items.length+1, title:'keyboard',price:50 } )"> BTM </button>
   <h3> Total Computed {{calculateTotal}}</h3>
-  <h2> {{items.map( e=> e )}} </h2>
+  <h2> Method Total - {{getTotal() }} </h2>
+  <input type="text" v-model="country">
+
 </div>
 </template>
 
@@ -32,16 +34,22 @@ export default {
           title: 'Laptop',
           price:105
         },
-      ]
+      ],
+      country:''
     };
   },
   methods: {
+    getTotal(){
+      console.log('gettotal method');
+      return this.items.reduce((total,curr) => (total=total+curr.price),0)
+    }
   },
   computed:{
     fullName(){
       return `${this.firstName} ${this.lastName}`
     },
     calculateTotal(){
+      console.log("get total calcuated")
       return this.items.reduce((total,curr) => (total=total+curr.price),0)
     }
   }
