@@ -1,31 +1,17 @@
 <template>
-<div class = "flex flex-col justify-center items-center">
-  <h2> Volume Tracker (0-20)</h2>
-  <h3> current Volume: {{volume}}</h3>
-  <div class="flex ">
-    <button @click="volume+=2" class="bg-slate-400 border-2 border-sky-300 p-2 w-80"> Increase </button>
-    <button @click="volume-=2" class="bg-slate-400 border-2 border-red-300 p-2 w-80 ml-2"> Decrease </button>
-  </div>
-  <input type="text" v-model="movie" class = "border-2 border-red-300 p-2">
-  <input type="text" v-model="movieInfo.title" class = "border-2 border-red-300 p-2">
-  <input type="text" v-model="movieInfo.actor" class = "border-2 border-red-300 p-2">
-  <button @click="movieList = movieList.concat(['wonder woman']) ">Add Movie </button>
-</div>
+  <Greet/>
 </template>
 
 <script>
-
+import Greet from './components/Greet.vue';
 export default {
+  
   name: "App",
+  components:{
+    Greet
+  },
   data() {
     return {
-      volume:0,
-      movie:'',
-      movieInfo:{
-        title: '',
-        actor: ''
-      },
-      movieList:['Batman','Superman']
     };
   },
   methods: {
@@ -48,7 +34,7 @@ export default {
     // Use transitions, because it gives you the start and end state!
 
     // Immediate tag is mount?
-
+    // Immediate and Deep
     // Watchers will not look at deeply nested properties. 
     movieList:{
       handler(newValue){
