@@ -6,6 +6,10 @@
     <button @click="volume+=2" class="bg-slate-400 border-2 border-sky-300 p-2 w-80"> Increase </button>
     <button @click="volume-=2" class="bg-slate-400 border-2 border-red-300 p-2 w-80 ml-2"> Decrease </button>
   </div>
+  <input type="text" v-model="movie" class = "border-2 border-red-300 p-2">
+  <input type="text" v-model="movieInfo.title" class = "border-2 border-red-300 p-2">
+  <input type="text" v-model="movieInfo.actor" class = "border-2 border-red-300 p-2">
+  <button @click="movieList = movieList.concat(['wonder woman']) ">Add Movie </button>
 </div>
 </template>
 
@@ -15,7 +19,13 @@ export default {
   name: "App",
   data() {
     return {
-      volume:0
+      volume:0,
+      movie:'',
+      movieInfo:{
+        title: '',
+        actor: ''
+      },
+      movieList:['Batman','Superman']
     };
   },
   methods: {
@@ -36,7 +46,15 @@ export default {
     // Use watches to check to favorable vaue to know if you ready to perfomr an action.
     // Common use case, call an api in response to data change.
     // Use transitions, because it gives you the start and end state!
-    
+
+    // Immediate tag is mount?
+
+    // Watchers will not look at deeply nested properties. 
+    movieList:{
+      handler(newValue){
+        console.log(' Updated list :', newValue);
+      },
+    },
     volume(newValue,oldValue){
       if(newValue === 16 && newValue > oldValue){
         alert(
@@ -45,6 +63,18 @@ export default {
       }
 
       if(this.volume > 20) this.volume = 20;
+    },
+    movie: {
+      handler(newValue){
+        console.log('calling api with ',newValue);
+      },
+      immediate:true // On page load
+    },
+    movieInfo: {
+      handler(newValue) {
+        console.log(`Calling api with movie title = ${newValue.title} and actor = ${newValue.actor}`);
+      },
+      deep:true
     }
   }
 };
