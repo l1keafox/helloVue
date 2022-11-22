@@ -1,23 +1,27 @@
 <template>
-  <Greet fofo="bruce" hero="Batman"/>
+  <!-- <Greet fofo="bruce" hero="Batman"/>
   <Greet fofo="Ray"  hero="Father"/>
-  <Greet fofo="Williams"  hero="Son"/>
+  <Greet fofo="Williams"  hero="Son"/> -->
   <Greet :fofo="name"  :hero="channel"/>
+  <Article title="Real Title" :likes="50" :isPublished="isPublished" />
 </template>
 
 <script>
 import Greet from './components/Greet.vue';
+import Article from './components/Article.vue';
 export default {
   
   name: "App",
   components:{
-    Greet
+    Greet,
+    Article
   },
   data() {
-    
+    // Variables like states from react, but
     return {
       name:"evee",
-      channel:"mother"
+      channel:"mother",
+      isPublished:false
     };
   },
   methods: {
@@ -77,8 +81,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #c0c0c0;
 }
-
+body{
+  background-color: rgb(20, 20, 20)
+}
 
 </style>
