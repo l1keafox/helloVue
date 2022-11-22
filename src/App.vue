@@ -1,27 +1,26 @@
 <template>
-  <h1>App Compant Username {{name}}</h1>
-  <CompC/>
+  <button @click="showPopup=true"> Show popup</button>
+  <PopUp v-show="showPopup" @close="showPopup=false"/>
 </template>
 
 <script>
-import CompC from './components/CompC';
-
+import PopUp from './components/PopUp';
 export default {
   
 
   name: "App",
   components:{
-    CompC
+    PopUp
   },
   data() {
     // Variables like states from react, but
     return {
-      name:'raymond'
+      showPopup:false
     };
   },
   provide(){
     return {
-      username:this.name
+      
     }
   },
   methods: {
