@@ -1,26 +1,35 @@
 <template >
   <div class = "flex flex-col justify-center items-center pt-10">
-    <h4> App Component Text</h4>
-    <ChildStyles>
-      <h4>ChildStyles Slot Stuff</h4>
-    </ChildStyles>
-
+    <div>
+    <button @click="activeTab = 'TabA'">A </button>
+    <button @click="activeTab = 'TabB'">B </button>
+    <button @click="activeTab = 'TabC'">C </button>
+    </div>
+    <div>
+      <TabA v-if="activeTab=== 'TabA'"/>
+      <TabB v-if="activeTab=== 'TabB'"/>
+      <TabC v-if="activeTab=== 'TabC'"/>
+  </div>
   </div>
 </template>
 
 <script>
-import ChildStyles from "./components/ChildStyles"
+import TabA from "./components/TabA"
+import TabB from "./components/TabB"
+import TabC from "./components/TabC"
 export default {
   name: "App",
 
   components:{
-    ChildStyles
+    TabA,
+    TabB,
+    TabC
   },
 
   data() {
     // Variables like states from react, but
     return {
-      name:''
+      activeTab:'TabA'
     };
   },
   provide(){
@@ -86,7 +95,7 @@ export default {
 </script>
 
 
-****with Scoped the parent's componets styles will not leak into childs... 
+With Scoped the parent's componets styles will not leak into childs... 
 But, a childs root node wil be affected by parent's scoped.
 When using Slots - parents styles will be used. regardless of scoped
 ****
