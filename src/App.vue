@@ -1,6 +1,6 @@
 <template>
   <button @click="showPopup=true"> Show popup</button>
-  <PopUp v-show="showPopup" @close="showPopup=false"/>
+  <PopUp v-show="showPopup" @close="closePopup"/>
 </template>
 
 <script>
@@ -24,6 +24,10 @@ export default {
     }
   },
   methods: {
+    closePopup(name){
+      this.showPopup = false;
+      console.log(name);
+    }
     // Will always be changed in the UI.
   },
   computed:{
