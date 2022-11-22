@@ -3,7 +3,7 @@
   <Greet fofo="Ray"  hero="Father"/>
   <Greet fofo="Williams"  hero="Son"/> -->
   <Greet :fofo="name"  :hero="channel"/>
-  <Article title="Real Title" :likes="50" :isPublished="isPublished" />
+  <Article id="my-article" title="Real Title" :likes="50" :isPublished="isPublished" />
 </template>
 
 <script>

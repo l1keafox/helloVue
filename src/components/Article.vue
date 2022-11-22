@@ -1,10 +1,8 @@
 <template>
-    <div>
         Why Is this Article hERe?
-        <h2> {{title}}</h2>
+        <h2 v-bind="$attrs"> {{title}}</h2>
         <h3> Likes: {{likes}}</h3>
-        <h2> PUlished - {{ isPublished? 'yes' : 'No' }} {{isPublished}}</h2>
-    </div>
+        <h2> Published - {{ isPublished? 'yes' : 'No' }} {{isPublished}}</h2>
 </template>
 
 <script>
