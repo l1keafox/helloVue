@@ -1,16 +1,20 @@
 <template>
-  <div class = "flex justify-center items-center">
-    <InputStuff v-model="name"/>
+  <div class = "flex flex-col justify-center items-center pt-10">
+    <CardVue > <h1 class="text-3xl"> Card Content</h1>  </CardVue>
+    <CardVue > Non Card  </CardVue>
+    <CardVue > 
+        <img src="https://picsum.photos/200"> 
+    </CardVue>
   </div>
 </template>
 
 <script>
-import InputStuff from './components/InputStuff';
+import CardVue from './components/Card.vue';
 export default {
   name: "App",
 
   components:{
-    InputStuff
+    CardVue
   },
 
   data() {
