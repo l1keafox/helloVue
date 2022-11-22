@@ -5,6 +5,7 @@
     <CardVue > 
         <img src="https://picsum.photos/200"> 
     </CardVue>
+    <CardVue /> 
   </div>
 </template>
 
