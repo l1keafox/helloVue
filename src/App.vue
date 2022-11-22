@@ -1,12 +1,16 @@
 <template >
   <div class = "flex flex-col justify-center items-center pt-10">
-    <div>
+    <div class ="flex m-3">
     <button @click="activeTab = 'TabA'">A </button>
     <button @click="activeTab = 'TabB'">B </button>
     <button @click="activeTab = 'TabC'">C </button>
     </div>
     <div>
+      <keep-alive>
+      
+      
       <component :is="activeTab"/>
+    </keep-alive>
       <!-- <TabA v-if="activeTab=== 'TabA'"/>
       <TabB v-if="activeTab=== 'TabB'"/>
       <TabC v-if="activeTab=== 'TabC'"/> -->
