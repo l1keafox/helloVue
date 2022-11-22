@@ -5,7 +5,19 @@
     <CardVue > 
         <img src="https://picsum.photos/200"> 
     </CardVue>
-    <CardVue /> 
+    <CardVue>
+      <template v-slot:header>
+        <h3> Header</h3>
+      </template>
+      <template v-slot:default>
+        <img src="https://picsum.photos/200"> 
+      </template>
+      <template v-slot:footer> 
+        <button> View Details</button>
+      </template>
+ 
+    </CardVue>
+    
   </div>
 </template>
 

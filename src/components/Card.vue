@@ -1,13 +1,21 @@
 <template>
     <div class="card" >
-        <slot> Default Content </slot>
+        
+        <div id="card-header"> 
+            <slot name="header"></slot>
+        </div>
+        <div id="card-content"> 
+            <slot> Default Content </slot>
+        </div>
+        <div id="card-footer"> 
+            <slot name="footer"></slot>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name:"CardVue",
-        
     }
 </script>
 
