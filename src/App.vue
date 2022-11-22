@@ -1,28 +1,28 @@
 <template>
-  <!-- <Greet fofo="bruce" hero="Batman"/>
-  <Greet fofo="Ray"  hero="Father"/>
-  <Greet fofo="Williams"  hero="Son"/> -->
-  <Greet :fofo="name"  :hero="channel"/>
-  <Article id="my-article" title="Real Title" :likes="50" :isPublished="isPublished" />
+  <h1>App Compant Username {{name}}</h1>
+  <CompC/>
 </template>
 
 <script>
-import Greet from './components/Greet.vue';
-import Article from './components/Article.vue';
+import CompC from './components/CompC';
+
 export default {
   
+
   name: "App",
   components:{
-    Greet,
-    Article
+    CompC
   },
   data() {
     // Variables like states from react, but
     return {
-      name:"evee",
-      channel:"mother",
-      isPublished:false
+      name:'raymond'
     };
+  },
+  provide(){
+    return {
+      username:this.name
+    }
   },
   methods: {
     // Will always be changed in the UI.
