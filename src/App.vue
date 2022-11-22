@@ -6,9 +6,10 @@
     <button @click="activeTab = 'TabC'">C </button>
     </div>
     <div>
-      <TabA v-if="activeTab=== 'TabA'"/>
+      <component :is="activeTab"/>
+      <!-- <TabA v-if="activeTab=== 'TabA'"/>
       <TabB v-if="activeTab=== 'TabB'"/>
-      <TabC v-if="activeTab=== 'TabC'"/>
+      <TabC v-if="activeTab=== 'TabC'"/> -->
   </div>
   </div>
 </template>
