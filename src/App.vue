@@ -1,21 +1,22 @@
 <template>
-  <button @click="showPopup=!showPopup"> Show popup</button>
-  <PopUp v-show="showPopup" @close="closePopup"/>
+  <div class = "flex justify-center items-center">
+    <InputStuff v-model="name"/>
+  </div>
 </template>
 
 <script>
-import PopUp from './components/PopUp';
+import InputStuff from './components/InputStuff';
 export default {
-  
-
   name: "App",
+
   components:{
-    PopUp
+    InputStuff
   },
+
   data() {
     // Variables like states from react, but
     return {
-      showPopup:false
+      name:''
     };
   },
   provide(){
@@ -24,25 +25,26 @@ export default {
     }
   },
   methods: {
+    // Will always be changed in the UI.
+    // Highest cost updating.
     closePopup(name){
       this.showPopup = false;
       console.log(name);
     }
-    // Will always be changed in the UI.
   },
   computed:{
     // computed is cached, and doesn't always get called when UI.
     // Filtering sorting here is best! Prevent Vue from recalcuating update doesn't concern table data.
     // Best to use when compose new data from existing data.
     // Also used to reduce the length of a var - 
-    // Deeply nested property to bind it.
+    // Deeply nested property, bind it to access.
 
   },
   watch: { // This is like useEffect
-    // Generic way to react to reac tto data changes.
+    // Generic way to react to data changes.
     // Not recommend to use computed as a watcher.
     // This will return the new value, and old value always
-    // Use watches to check to favorable vaue to know if you ready to perfomr an action.
+    // Use watches to check to favorable value to know if you ready to perfomr an action.
     // Common use case, call an api in response to data change.
     // Use transitions, because it gives you the start and end state!
 
