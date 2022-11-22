@@ -1,33 +1,33 @@
 <template>
   <div class = "flex flex-col justify-center items-center pt-10">
-    <CardVue > <h1 class="text-3xl"> Card Content</h1>  </CardVue>
-    <CardVue > Non Card  </CardVue>
-    <CardVue > 
-        <img src="https://picsum.photos/200"> 
-    </CardVue>
-    <CardVue>
-      <template v-slot:header>
-        <h3> Header</h3>
+    <NameListVue>
+        <template v-slot:default="slotProps">
+          {{slotProps.firstName}} {{slotProps.lastName}}
+        </template>
+    </NameListVue>
+
+    <NameListVue>
+      <template v-slot:default="slotProps">
+        {{slotProps.lastName}} {{slotProps.firstName}}
       </template>
-      <template v-slot:default>
-        <img src="https://picsum.photos/200"> 
+    </NameListVue>
+
+    <NameListVue>
+      <template v-slot:default="slotProps">
+        {{slotProps.firstName}}
       </template>
-      <template v-slot:footer> 
-        <button> View Details</button>
-      </template>
- 
-    </CardVue>
-    
+    </NameListVue>
+
   </div>
 </template>
 
 <script>
-import CardVue from './components/Card.vue';
+import NameListVue from './components/NameList.vue';
 export default {
   name: "App",
 
   components:{
-    CardVue
+    NameListVue
   },
 
   data() {
