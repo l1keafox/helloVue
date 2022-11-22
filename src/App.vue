@@ -1,5 +1,5 @@
 <template>
-  <button @click="showPopup=true"> Show popup</button>
+  <button @click="showPopup=!showPopup"> Show popup</button>
   <PopUp v-show="showPopup" @close="closePopup"/>
 </template>
 
