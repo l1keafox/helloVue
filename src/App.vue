@@ -1,33 +1,20 @@
-<template>
+<template >
   <div class = "flex flex-col justify-center items-center pt-10">
-    <NameListVue>
-        <template v-slot:default="slotProps">
-          {{slotProps.firstName}} {{slotProps.lastName}}
-        </template>
-    </NameListVue>
-
-    <NameListVue>
-      <template v-slot:default="slotProps">
-        {{slotProps.lastName}} {{slotProps.firstName}}
-      </template>
-    </NameListVue>
-
-    <NameListVue>
-      <template v-slot:default="slotProps">
-        {{slotProps.firstName}}
-      </template>
-    </NameListVue>
+    <h4> App Component Text</h4>
+    <ChildStyles>
+      <h4>ChildStyles Slot Stuff</h4>
+    </ChildStyles>
 
   </div>
 </template>
 
 <script>
-import NameListVue from './components/NameList.vue';
+import ChildStyles from "./components/ChildStyles"
 export default {
   name: "App",
 
   components:{
-    NameListVue
+    ChildStyles
   },
 
   data() {
@@ -98,7 +85,14 @@ export default {
 };
 </script>
 
-<style>
+
+****with Scoped the parent's componets styles will not leak into childs... 
+But, a childs root node wil be affected by parent's scoped.
+When using Slots - parents styles will be used. regardless of scoped
+****
+
+<style scoped>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -108,5 +102,9 @@ export default {
 body{
   background-color: rgb(20, 20, 20)
 }
+h4{
+  color:orange;
+}
+
 
 </style>
