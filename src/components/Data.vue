@@ -22,7 +22,7 @@ import{ ref,reactive } from 'vue';
             // ref is a function reactive/reuseable object that is holding this internal value.
             // Comp is a lot more like react and using ref like useState.
 
-            const state = reactive({
+            let state = reactive({
                 first:"ray",
                 last:"lewis",
                 hero:"father"
@@ -31,9 +31,25 @@ import{ ref,reactive } from 'vue';
             const firstName = ref('Raymond'); 
             const lastName = ref('Lewis');
             const heroName = ref('Father');
+
+            const allName = {
+                first: "blah",
+                last: "dah",
+                hero: "mah"
+            }
+            state = reactive(allName);
+
             const greet = `Hello ${firstName.value}`
             const greetHero = `Hello ${firstName.value} ${lastName.value} ${heroName.value}`
             const reactiveGreet = `Hello ${state.first} ${state.last} ${state.hero} `;
+
+
+            const isLoggedIn = ref(false);
+            const isLoggedInReactive = reactive({
+                value: false
+            })
+            console.log(isLoggedIn, isLoggedInReactive);
+
             return {
                 firstName,
                 lastName,
