@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <DataVue />
+    <DemoTwo />
   </div>
 </template>
 
 <script>
-import DataVue from "./components/Data.vue";
+import DemoTwo from "./components/DemoTwo.vue";
 export default {
   name: "App",
 
   components: {
-    DataVue,
+    DemoTwo,
   },
   setup(){
     // Composition API
@@ -19,7 +19,8 @@ export default {
     // This requires import from vue for useing things.
 
     // ref - useState - not reference to element.
-
+    // reactive - object ref.
+    
   },  
 
   data() {
