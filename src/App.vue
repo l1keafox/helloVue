@@ -1,22 +1,21 @@
 <template >
   <div class = "flex flex-col justify-center items-center pt-10">
-    <CreatePost/>
+    <ParentVue/>
   </div>
 </template>
 
 <script>
-import CreatePost from './components/CreatePost.vue';
+import ParentVue from './components/Parent.vue';
 export default {
   name: "App",
 
   components:{
-    CreatePost
+    ParentVue
   },
 
   data() {
     // Variables like states from react, but
     return {
-      activeTab:'TabA'
     };
   },
   provide(){
