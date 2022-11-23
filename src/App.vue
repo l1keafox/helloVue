@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <MethodVue />
+    <VModel />
   </div>
 </template>
 
 <script>
-import MethodVue from "./components/Methods.vue";
+import VModel from "./components/VModel.vue";
 export default {
   name: "App",
 
   components: {
-    MethodVue,
+    VModel,
   },
   setup(){
     // Composition API
