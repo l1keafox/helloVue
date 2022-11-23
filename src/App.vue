@@ -1,26 +1,26 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <DemoTwo />
+    <MethodVue />
   </div>
 </template>
 
 <script>
-import DemoTwo from "./components/DemoTwo.vue";
+import MethodVue from "./components/Methods.vue";
 export default {
   name: "App",
 
   components: {
-    DemoTwo,
+    MethodVue,
   },
   setup(){
     // Composition API
     // This is like a coding area that follows different rules and not for returning stuff, but 
-    // a bit like react coding area, where it's not so ridid.
+    // this is a lot like react now, with ref/reaction and methods in here.
     // This requires import from vue for useing things.
 
     // ref - useState - not reference to element.
     // reactive - object ref.
-    
+
   },  
 
   data() {
