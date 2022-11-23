@@ -21,6 +21,15 @@ import axios from 'axios'
                 errorMsg:''
             }
         },
+        async created() {
+            try{
+                    let result = await axios.get('https://jsonplaceholder.typicode.com/posts');
+                    this.posts = result.data;
+                    console.log("@created");
+                }catch(err){
+                    this.errorMsg = err;
+                }
+        },
         methods:{
             async getPosts(){
                 try{
