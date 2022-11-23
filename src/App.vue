@@ -12,6 +12,15 @@ export default {
   components: {
     DataVue,
   },
+  setup(){
+    // Composition API
+    // This is like a coding area that follows different rules and not for returning stuff, but 
+    // a bit like react coding area, where it's not so ridid.
+    // This requires import from vue for useing things.
+
+    // ref - useState - not reference to element.
+
+  },  
 
   data() {
     // Variables like states from react, but
