@@ -1,18 +1,16 @@
 <template >
   <div class = "flex flex-col justify-center items-center pt-10">
-    <teleport to="#portal-root"> 
-      <PortalVue/>
-    </teleport>
+    <PostList/>
   </div>
 </template>
 
 <script>
-import PortalVue from './components/Portal.vue';
+import PostList from './components/PostList.vue';
 export default {
   name: "App",
 
   components:{
-    PortalVue
+    PostList
   },
 
   data() {
