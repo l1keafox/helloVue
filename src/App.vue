@@ -1,16 +1,19 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <Person />
+    <ClickCounter />
+    <HoverCount />
   </div>
 </template>
 
 <script>
-import Person from "./components/Person";
+import ClickCounter from "./components/ClickCounter";
+import HoverCount from "./components/HoverCount";
 export default {
   name: "App",
 
   components: {
-    Person,
+    ClickCounter,
+    HoverCount,
   },
   setup(){
     // Composition API
