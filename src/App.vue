@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <TemplateRef />
+    <Person />
   </div>
 </template>
 
 <script>
-import TemplateRef from "./components/TemplateRef";
+import Person from "./components/Person";
 export default {
   name: "App",
 
   components: {
-    TemplateRef,
+    Person,
   },
   setup(){
     // Composition API
