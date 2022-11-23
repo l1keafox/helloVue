@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Button @click="addCount"> Clicked {{ count }} times</Button>
+    <button @click="addCount"> Clicked {{ count }} times</button>
   </div>
 </template>
 
@@ -9,7 +9,12 @@ import CounterMixin from "./../mixins/counter";
 
 export default {
   name: "ClickCounter",
-  mixins: [CounterMixin]
+  mixins: [CounterMixin],
+  data(){
+    return{
+        count:100
+    }
+  }
 };
 </script>
 

@@ -1,19 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <ClickCounter />
-    <HoverCountVue/>
+    <DataVue />
   </div>
 </template>
 
 <script>
-import ClickCounter from "./components/ClickCounter.vue";
-import HoverCountVue from "./components/HoverCount.vue";
+import DataVue from "./components/Data.vue";
 export default {
   name: "App",
 
   components: {
-    ClickCounter,
-    HoverCountVue
+    DataVue,
   },
 
   data() {
