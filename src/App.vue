@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <LifeCycleC />
+    <TemplateRef />
   </div>
 </template>
 
 <script>
-import LifeCycleC from "./components/LifeCycleC";
+import TemplateRef from "./components/TemplateRef";
 export default {
   name: "App",
 
   components: {
-    LifeCycleC,
+    TemplateRef,
   },
   setup(){
     // Composition API

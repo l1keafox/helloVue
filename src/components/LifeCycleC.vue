@@ -16,6 +16,7 @@ import{
     export default {
         name:"LifeCycleC",
         setup(){
+            // create and before create has been repalced in the setup.
             onBeforeMount(()=>{
                 console.log('lifeCycleC on before onBeforeMount');
             })
