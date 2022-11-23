@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <PostList />
+    <TemplateRef />
   </div>
 </template>
 
 <script>
-import PostList from "./components/PostList.vue";
+import TemplateRef from "./components/TemplateRef.vue";
 export default {
   name: "App",
 
   components: {
-    PostList,
+    TemplateRef,
   },
 
   data() {
