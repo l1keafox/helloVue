@@ -5,21 +5,34 @@
 
         <h2> {{count}}</h2>
         <button @click="addCount"> AddCount </button>
+
+        <h2> {{first}} {{last}}</h2>
+        <button @click="changeHero"> Change Hero </button>
     </div>
 </template>
 
 <script>
-import {ref} from 'vue';
+import {ref, reactive, toRefs} from 'vue';
     export default {
         name:"MethodVue",
         setup(){
             const count = ref(0)
+            const state = reactive({
+                first:"bruce",
+                last:"Wyane"
+            })
             function addCount(){
                 count.value++;
             }
+            function changeHero(){
+                state.first = "Calrk";
+                state.last = "kent";
+            }
             return {
                 count,
-                addCount
+                addCount,
+                ...toRefs(state),
+                changeHero
             }
         },
         data(){
