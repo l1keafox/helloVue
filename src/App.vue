@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <CompVue />
+    <WatchVue />
   </div>
 </template>
 
 <script>
-import CompVue from "./components/Comp";
+import WatchVue from "./components/Watch";
 export default {
   name: "App",
 
   components: {
-    CompVue,
+    WatchVue,
   },
   setup(){
     // Composition API
