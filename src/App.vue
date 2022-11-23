@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <ProvideInject />
+    <LifeCycleC />
   </div>
 </template>
 
 <script>
-import ProvideInject from "./components/ProvideInject";
+import LifeCycleC from "./components/LifeCycleC";
 export default {
   name: "App",
 
   components: {
-    ProvideInject,
+    LifeCycleC,
   },
   setup(){
     // Composition API
