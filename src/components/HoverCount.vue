@@ -10,7 +10,7 @@ import useCounter from "../composables/useCounter";
 export default {
   name: "HoverCount",
   setup() {
-    const { count, addCount } = useCounter();
+    const { count, addCount } = useCounter(1,1);
     return {
       count,
       addCount,

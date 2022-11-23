@@ -10,7 +10,7 @@ import useCounter from '../composables/useCounter';
 export default {
   name: "ClickCounter",
   setup(){
-    const {count, addCount } = useCounter();
+    const {count, addCount } = useCounter(5,5);
     return {
       count,
       addCount
