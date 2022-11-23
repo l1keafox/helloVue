@@ -24,7 +24,7 @@ import axios from 'axios'
         methods:{
             async getPosts(){
                 try{
-                    let result = await axios.get('https://jsonplaceholder.typicode.com/postsxx');
+                    let result = await axios.get('https://jsonplaceholder.typicode.com/posts');
                     this.posts = result.data;
                 }catch(err){
                     this.errorMsg = err;
