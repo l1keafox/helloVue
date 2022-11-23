@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <WatchVue />
+    <ProvideInject />
   </div>
 </template>
 
 <script>
-import WatchVue from "./components/Watch";
+import ProvideInject from "./components/ProvideInject";
 export default {
   name: "App",
 
   components: {
-    WatchVue,
+    ProvideInject,
   },
   setup(){
     // Composition API
