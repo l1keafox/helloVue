@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-center items-center pt-10">
-    <VModel />
+    <CompVue />
   </div>
 </template>
 
 <script>
-import VModel from "./components/VModel.vue";
+import CompVue from "./components/Comp";
 export default {
   name: "App",
 
   components: {
-    VModel,
+    CompVue,
   },
   setup(){
     // Composition API
