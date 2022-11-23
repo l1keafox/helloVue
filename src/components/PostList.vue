@@ -1,6 +1,5 @@
 <template>
     <div>
-        <button @click="getPosts" class="border-2 border-yellow-500 p-3 w-96 bg-slate-400"> Post List </button>
         <h3 v-if="errorMsg">{{errorMsg}} </h3>
         <div v-for="post in posts" :key="post.id">
             <h1 class="font-bold"> {{post.id}} {{post.title}}</h1>
@@ -22,13 +21,7 @@ import axios from 'axios'
             }
         },
         async created() {
-            try{
-                    let result = await axios.get('https://jsonplaceholder.typicode.com/posts');
-                    this.posts = result.data;
-                    console.log("@created");
-                }catch(err){
-                    this.errorMsg = err;
-                }
+            this.getPosts();
         },
         methods:{
             async getPosts(){
